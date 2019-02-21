@@ -1,4 +1,4 @@
-
+o
 #Há um problema com o site, quando você altera de página para acessar novas casas,
 #o site sempre irá mostrar as 12 primeiras casas, em qualquer que seja a aba
 #para isso dividi o código em 2 etapas, a primeira etapa ele irá pegar 
@@ -13,8 +13,7 @@ import re
 
 
 
-arquivo = open('nomes.txt','w')
-arquivo2 = open('descricao.txt','w')
+arquivo = open('Casas.txt','w')
 regex = re.compile(r'Endereço: (.*)<br>')
 
 
@@ -51,9 +50,9 @@ class mapaCultura(scrapy.Spider):
         pagina = response.css('div#container').extract_first().strip()
         endereco = regex.search(pagina).group(1)
         titulo = response.css('h1::text').extract_first().strip()
-        arquivo.write(titulo+'\n')
-        arquivo2.write(endereco+'\n')
-
+        arquivo.write(titulo+' ; '+endereco+'\n')
+        arquivo.write('\n')
+        
        
     
 
@@ -63,4 +62,3 @@ process.crawl(mapaCultura)
 process.start()
 
 arquivo.close()
-arquivo2.close()
