@@ -4,7 +4,7 @@ Museu de Arte Moderna (MAM) ; Av. Infante Dom Henrique, 85, Parque do Flamengo.
 
 Museu da cachaça ; Rua Nova Mantiquira 227 - Mantiquira, Paty do Alferes
 
-Cine Bom Jardim ; Rua Miguel de Carvalho, Bom Jardim - Rio de Janeiro
+Cine Bom Jardim ; Rua Miguel de Carvalho, Bom Jardim , Rio de Janeiro
 
 Teatro Carlos Gomes ; Praça Tiradentes, Centro.
 
@@ -78,7 +78,7 @@ Centro Cultural Maestro José Figueira ; Praça Manoel Congo s/nº,  Centro
 
 Casa de Cultura Léa Pentagna ; Rua Vito Pentagna, 213, Benfica, Valença - RJ
 
-Teatro Municipal João Caetano ; Rua Quinze de Novembro, 35
+Teatro Municipal João Caetano ; Rua Quinze de Novembro, 35, Niterói
 
 Livraria Prosa e Verso ; Rua Faustino Pinheiro, 196 - Quatis - RJ, 27410-130 
 
@@ -322,7 +322,7 @@ Biblioteca da Universo ; Rua Marechal Deodoro 217, Niterói - Rio de Janeiro
 
 CAD - Centro de Atividades  Diversificadas ; Rua Maria Adelaide, 16, Conceição de Macabu - RJ
 
-Centro Cultural Fazenda da Posse ; Rua Dario Aragão, 2 ? Centro, Barra Mansa, RJ
+Centro Cultural Fazenda da Posse ; Rua Dario Aragão, 2  Centro, Barra Mansa, RJ
 
 Museu Capitão Pitaluga ; Rua Comendador Antonio Jannuzzi, 415  
 
@@ -334,7 +334,7 @@ Cinemaxx Unigranrio Caxias ; Rua Marquês de Herval , Jardim Vinte e Cinco de Ago
 
 Biblioteca Rui Barbosa ; Estrada Senador Salgado Filho, 44, Olinda.
 
-Cine Show Teresópolis ; Rua Edmundo Bittencourt, nº 101, Loja 201, Várzea ? Teresópolis
+Cine Show Teresópolis ; Rua Edmundo Bittencourt, nº 101, Loja 201, Várzea , Teresópolis
 
 Teatro Cacilda Santa Rosa ; R. Raul Veiga, 485 - Centro, Cabo Frio
 
@@ -390,7 +390,7 @@ Biblioteca Pública Celeiro das Letras do Distrito de Santanésia ; Rua Professora
 
 Casa de Cultura Villa Maria ; Rua Barão Lagoa Dourada, 234, Jardim Maria de Queiroz
 
-Solar Grandjean de Montigny ; Rua Marquês de São Vicente, 225 ? Gávea - Rio de Janeiro/RJ
+Solar Grandjean de Montigny ; Rua Marquês de São Vicente, 225 , Gávea - Rio de Janeiro/RJ
 
 Biblioteca Pública Municipal de São Gonçalo ; Av. Presidente Kennedy, 721, Estrela do Norte, São Gonçalo - RJ
 
@@ -454,7 +454,7 @@ Museu Carmem Miranda ; Avenida Rui Barbosa, 560, Flamengo
 
 Centro Cultural de Guapimirim ; Rua Itacoatiara, s/nº, Centro
 
-Estação Vivo Gávea: Shopping da Gávea - R. Marquês de São Vicente, 52, 4º andar
+Estação Vivo Gávea; Shopping da Gávea - R. Marquês de São Vicente, 52, 4º andar
  
 Estação Sesc Rio; Rua Voluntários da Pátria, 35, Botafogo  
 
@@ -498,7 +498,7 @@ CineSystem Recreio Shopping; Av. das Américas, 10.019, Recreio dos Bandeirantes
 
 CineSystem Via Brasil Shopping; Rua Itapera, 500, 3º piso, Irajá  
 
-CineSystem Ilha do Governador; Ilha Plaza Shopping ? Av. Maestro Paulo e Silva, 400, Pav 6 , Parte G3, Jard
+CineSystem Ilha do Governador; Ilha Plaza Shopping , Av. Maestro Paulo e Silva, 400, Pav 6 , Parte G3, Jard
 
 Biblioteca Pública Municipal Ana Mariana Barbosa ; Rua Miguel Pereira, s/nº, Inconfidência, Paraíba do Sul - Rio de Janeiro
 
@@ -550,7 +550,7 @@ Cinemark Carioca; Estrada Vicente Carvalho, 909, Carioca Shopping, Vicente Carva
 
 Centro Cultural Anderson Giga Byte ; Avenida Ézio Cardoso da Fonseca s/n, Cabo Frio
 
-Casa de Cultura Arte In Foco ;  Rua Madre Filomena da Purificação, 36 ? Centro, Barra Mansa, RJ 27330-350 
+Casa de Cultura Arte In Foco ;  Rua Madre Filomena da Purificação, 36 , Centro, Barra Mansa, RJ 27330-350 
 
 Academia de Letras de Vassouras ; Rua Chanceler Raul Fernandes, 121- Centro 
 
@@ -586,9 +586,9 @@ Biblioteca Pública Municipal Poeta Manoel Baptista ; Avenida José de Souza Faria
 
 Biblioteca Municipal Poeta João Prado ; Rua Maria Mendes Vecchi, 149, Mesquita
 
-Cineshow Barra Mansa ; Av. Joaquim Leite, 577 ? Centro, Barra Mansa - RJ
+Cineshow Barra Mansa ; Av. Joaquim Leite, 577 , Centro, Barra Mansa - RJ
 
-Centro de Educação Musical Catavento ; Rua dos Mineiros, 143 – Centro 
+Centro de Educação Musical Catavento ; Rua dos Mineiros, 143 , Centro 
 
 Top Cine Mercado Estação ; Rua Paulo Barbosa, 310, Petrópolis - RJ
 
@@ -710,7 +710,7 @@ Galeria 52 ; R. Lopes Trovão, 52, Icaraí, Niterói
 
 Biblioteca Lemant De Cnop ; Av. Florimundo De Cnop, 341  
 
-Biblioteca Pública Municipal Professor Cordelino Teixeira de Paulo ; Rua João Martins, 149 ? Centro
+Biblioteca Pública Municipal Professor Cordelino Teixeira de Paulo ; Rua João Martins, 149 , Centro
 
 Biblioteca Municipal Arlindo de Medeiros ; Av. Automóvel Clube, 206 - Centro 
 
@@ -734,7 +734,7 @@ Museu de Arte Sacra ; Praça Padre Gomes Leal
 
 MIS – Museu da Imagem e do Som ; Rua Luiz da Rocha Miranda 117, Resende - Rio de Janeiro
 
-Biblioteca Pública Municipal Profª Adelaide da Cunha Franco ; Rua Custódia Ferreira Leite, 1 ? Centro, Barra Mansa, RJ
+Biblioteca Pública Municipal Profª Adelaide da Cunha Franco ; Rua Custódia Ferreira Leite, 1 , Centro, Barra Mansa, RJ
 
 Centro Cultural Melchíades Cardoso ; Praça Ary Parreiras, 156, Centro, Miracema - RJ
 
@@ -960,11 +960,11 @@ Centro de Desenvolvimento Territorial ; Palácio Cultural Carlos Martins, Rua dos
 
 Grupo de União e Consciência Negra ; Rua Antonio Veloso, 98, Cidade Alta.
 
-Biblioteca Municipal Dr. Francisco Peralta ; Rua Luis Pamplona, 122 ? Centro, Miguel Pereira, RJ
+Biblioteca Municipal Dr. Francisco Peralta ; Rua Luis Pamplona, 122 , Centro, Miguel Pereira, RJ
 
 Teatro Armando Melo ; Rua Frei Fidélis, Jardim Vinte e Cinco de Agosto.
 
-Biblioteca Municipal Profª Ester Molheiros Mociokas ; Rodovia RJ-125 ? Conrado, Miguel Pereira, RJ
+Biblioteca Municipal Profª Ester Molheiros Mociokas ; Rodovia RJ-125 , Conrado, Miguel Pereira, RJ
 
 Sala José Cândido de Carvalho ; Rua Presidente Pedreira, 98, Ingá, Niterói
 
@@ -1052,7 +1052,7 @@ Espaço Cultural Tom de Búzios ; R. Tom Jobim, 57   Armação dos Búzios - RJ, 2895
 
 Se Liga na Praça ; Rua Escritora Maria Cottas, 574, sala 1.
 
-Centro de Memória da Universidade Rural ; BR 465, Km 7, Avenida Ministro Fernando Costa, Seropédica ? RJ
+Centro de Memória da Universidade Rural ; BR 465, Km 7, Avenida Ministro Fernando Costa, Seropédica , RJ
 
 Cineclube Estação Cine São Pedro ; Rua Francisco Santos Silva, s/n°, Nova São Pedro. 
 
@@ -1060,7 +1060,7 @@ Galeria Progetti ; Travessa do Comercio, 22, Centro.
 
 Biblioteca Municipal Fábio Villaboim ; Largo Santa Rita,  s/n (antiga cadeia)
 
-Museu da Cultura Nordestina ; Rua General Taumaturgo, s/n, lote 4, quadra 23 ? Vila Rosário - Duque de Caxias - RJ
+Museu da Cultura Nordestina ; Rua General Taumaturgo, s/n, lote 4, quadra 23 , Vila Rosário - Duque de Caxias - RJ
 
 Cine Três Rios 1 ; Praça São Sebastião, 335 - Loja 32 - Ed. Olga Sola, Três Rios, RJ
 
@@ -1094,7 +1094,7 @@ Casa de Cultura Laranjeiras ; Largo do Mercado, Praça Zumbi dos Palmares, 125, C
 
 Museu do Mar ; Praça Daniel Barreto, s/nº, Praia dos Anjos.
 
-Teatro Gustavo Dutra - Gustavão ; BR 465, Km 7, Avenida Ministro Fernando Costa, Seropédica ? RJ
+Teatro Gustavo Dutra - Gustavão ; BR 465, Km 7, Avenida Ministro Fernando Costa, Seropédica , RJ
 
 Teatro do Espaço DCE/UFF ; Av. Visconde do Rio Branco, 625, Centro, Niterói
 
@@ -1356,13 +1356,13 @@ Cinema Municipal ; Av. Liberdade - PR Anjos, Arraial do Cabo - RJ, 28930-000
 
 Cine Santa Teresa ; Largo do Guimarães, 136, Santa Teresa.
 
-Espaço Cultural Luis Ronaldo Rodrigues de Almeida ; Estr Pres Pedreira, 117 ? Ponte do Rocha
+Espaço Cultural Luis Ronaldo Rodrigues de Almeida ; Estr Pres Pedreira, 117 , Ponte do Rocha
 
 Casa da Cultura Manoel Gonçalves de Souza Portugal ; Praça Fagundes Varela, 14, Rio Claro - RJ
 
 Galeria de Arte ICBEU ; Rua Dr. Francisco Portela, 2772, Zé Garoto, São Gonçalo - RJ
 
-Cine Show Resende ; Av. Saturnino Braga, nº 369, sala 214 a 217, Centro ? Resende 
+Cine Show Resende ; Av. Saturnino Braga, nº 369, sala 214 a 217, Centro , Resende 
 
 Teatro Sesc Nova Iguaçu ;  Rua Dom Adriano Hipólito, 10 
 
