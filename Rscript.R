@@ -55,10 +55,12 @@ library(leaflet.extras)
     filter(!is.na(longitude))
   
 #Plotar o mapa(Obtivemos alguns pontos estranhos)
-  mapaPontos = leaflet() %>% 
+  mapaCirculos = leaflet() %>% 
+    setView(lng=-43.4303, lat=-22.8763, zoom = 7) %>%
     addTiles() %>% 
-    addMarkers(lng = as.numeric(casas2$longitude),lat =  as.numeric(casas2$latitude), popup = casas2$lugar)
+    addCircles(lng = as.numeric(casas2$longitude),lat =  as.numeric(casas2$latitude), popup = casas2$lugar)
   mapaCalor = leaflet() %>% 
+    setView(lng=-43.4303, lat=-22.8763, zoom = 7) %>%
     addTiles() %>% 
     addHeatmap(lng = as.numeric(casas2$longitude),lat =  as.numeric(casas2$latitude))
   
