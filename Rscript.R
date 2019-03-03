@@ -3,6 +3,7 @@ library(leaflet)
 library(ggmap)
 library(readxl)
 library(leaflet.extras)
+library(rgdal)
 
 #Tratei manualmente alguns endereços na base de dados(Casas.txt) pois estavam apresentando algum tipo de problema no R
 #No site do mapa cultural, quando um lugar faz parte de uma rede, ele o agrupa em uma mesma página com vários endereços
@@ -53,16 +54,39 @@ library(leaflet.extras)
 #ver o porquê desses endereços retornaram NA)  
   casas2 = casas %>% 
     filter(!is.na(longitude))
-  
+
+#Ler a malha dos municípios do RJ
+RiodeJaneiro = readOGR(dsn="F://GitHub//Mapa-Cultural//Malha_shp",layer="33MUE250GC_SIR",
+                       use_iconv = TRUE,
+                       encoding = "UTF-8")
+plot(RiodeJaneiro)
 #Plotar o mapa(Obtivemos alguns pontos estranhos)
-  mapaCirculos = leaflet() %>% 
-    setView(lng=-43.4303, lat=-22.8763, zoom = 7) %>%
+  mapaCirculos = leaflet(RiodeJaneiro,
+                         options = leafletOptions(minZoom = 9)) %>% 
     addTiles() %>% 
-    addCircles(lng = as.numeric(casas2$longitude),lat =  as.numeric(casas2$latitude), popup = casas2$lugar)
-  mapaCalor = leaflet() %>% 
-    setView(lng=-43.4303, lat=-22.8763, zoom = 7) %>%
-    addTiles() %>% 
-    addHeatmap(lng = as.numeric(casas2$longitude),lat =  as.numeric(casas2$latitude))
+    setView(lng=-42.5303, lat=-22.1, zoom = 9) %>%
+    addPolygons(color = "#444444", weight = 1, smoothFactor = 0.5,
+              opacity = 1.0, fillOpacity = 0.2,
+              fillColor = 'blue',
+              highlightOptions = highlightOptions(color = "white", weight = 2,
+                                                  bringToFront = FALSE),
+              popup = RiodeJaneiro$NM_MUNICIP) %>%
+    addCircles(lng = as.numeric(casas2$longitude),
+               lat =  as.numeric(casas2$latitude),
+               popup = casas2$lugar,color = "Red") %>% 
+    addProviderTiles("Esri.WorldImagery")
+    
+  mapaCalor = leaflet(RiodeJaneiro,
+                      options = leafletOptions(minZoom = 9)) %>% 
+    setView(lng=-42.5303, lat=-22.1, zoom = 9) %>%
+    addPolygons(color = "#444444", weight = 1, smoothFactor = 0.5,
+                opacity = 1.0, fillOpacity = 0.2,
+                fillColor = 'blue',
+                highlightOptions = highlightOptions(color = "white", weight = 2,
+                                                    bringToFront = FALSE),
+                popup = RiodeJaneiro$NM_MUNICIP) %>%
+    addHeatmap(lng = as.numeric(casas2$longitude),lat =  as.numeric(casas2$latitude),radius = 10) %>% 
+    addProviderTiles("Esri.WorldImagery")
   
 
     
