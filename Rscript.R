@@ -88,5 +88,29 @@ plot(RiodeJaneiro)
     addHeatmap(lng = as.numeric(casas2$longitude),lat =  as.numeric(casas2$latitude),radius = 10) %>% 
     addProviderTiles("Esri.WorldImagery")
   
-
+  mapaGeral = leaflet(RiodeJaneiro,
+                      options = leafletOptions(minZoom = 9)) %>% 
+    addTiles() %>% 
+    setView(lng=-42.5303, lat=-22.1, zoom = 9) %>%
+    addPolygons(color = "#444444", weight = 1, smoothFactor = 0.5,
+                opacity = 1.0, fillOpacity = 0.2,
+                fillColor = 'blue',
+                highlightOptions = highlightOptions(color = "white", weight = 2,
+                                                    bringToFront = FALSE),
+                popup = RiodeJaneiro$NM_MUNICIP) %>%
+    addCircles(lng = as.numeric(casas2$longitude),
+               lat =  as.numeric(casas2$latitude),
+               popup = casas2$lugar,color = "Red",
+               group = "Circulos") %>% 
+    addHeatmap(lng = as.numeric(casas2$longitude),
+               lat =  as.numeric(casas2$latitude)
+               ,radius = 10,
+               group = "Calor") %>% 
+    addProviderTiles(providers$Esri.WorldImagery,group = "Esri.WorldImagery") %>% 
+    addProviderTiles(providers$CartoDB,group = "CartoDB") %>% 
+    addLayersControl(overlayGroups = c("Circulos","Calor"),
+                     baseGroups = c("Esri.WorldImagery","CartoDB"),
+                     options = layersControlOptions(collapsed = FALSE)) %>% 
+    hideGroup("Calor")
+    
     
