@@ -113,4 +113,39 @@ plot(RiodeJaneiro)
                      options = layersControlOptions(collapsed = FALSE)) %>% 
     hideGroup("Calor")
     
-    
+#Os pontos que estão estranhos são : 
+errados = casas %>% filter(lugar == "Museu de Cera de Petrópolis" | 
+                             lugar=="Centro Cultural Bernardino Lopes"|
+                             lugar=="Museu do Cárcere" |
+                             lugar =="Biblioteca Leonor Leite Bastos de Souza" |
+                             lugar=="Associação Sociocultural e Ambiental de Triunfo" | 
+                             lugar == "Biblioteca Córrego do Ouro")    
+#Vamos consertar os endereços : 
+errados$endereco = if_else(errados$lugar =="Museu de Cera de Petrópolis",
+                  "Rua Barão do Amazonas, 35 - Centro, Petrópolis - RJ, 25685-070",
+                  errados$endereco)#
+errados$endereco = if_else(errados$lugar == "Associação Sociocultural e Ambiental de Triunfo",
+                           "R Abdo Felix, Sn Santa Maria Madalena - RJ",
+                           errados$endereco)#
+errados$endereco = if_else(errados$lugar == "Museu do Cárcere",
+                           "RR95+35 Dois Rios, Angra dos Reis - RJ",
+                           errados$endereco)#  
+errados$endereco = if_else(errados$lugar == "Biblioteca Leonor Leite Bastos de Souza",
+                           "35JJ+2M Eldorado, Maricá - RJ",
+                           errados$endereco)
+errados$endereco = if_else(errados$lugar == "Centro Cultural Bernardino Lopes",
+                           "Rua Alexandre Pereira Dos Santos, sn - Boa Esperança, Rio Bonito - RJ, 28810-000",
+                           errados$endereco)
+errados$endereco = if_else(errados$lugar == "Biblioteca Córrego do Ouro",
+                           "Rua Prefeito Antônio Curvelo Benjamin, 226-232,Macaé, RJ",
+                           errados$endereco) #                          
+#Gerar o geocode : 
+for ( i in 1:6){
+  aux = geocode(as.character(errados$endereco[i])) 
+  longitudeAux = aux$lon
+  latitudeAux = aux$lat
+  errados$longitude[i] = longitudeAux
+  errados$latitude[i] = latitudeAux
+}
+
+
