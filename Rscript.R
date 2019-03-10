@@ -138,14 +138,48 @@ errados$endereco = if_else(errados$lugar == "Centro Cultural Bernardino Lopes",
                            errados$endereco)
 errados$endereco = if_else(errados$lugar == "Biblioteca Córrego do Ouro",
                            "Rua Prefeito Antônio Curvelo Benjamin, 226-232,Macaé, RJ",
-                           errados$endereco) #                          
+                           errados$endereco) # 
+#Os pontos que deram NA são :
+
+nas = casas %>% 
+  filter(is.na(latitude))
+#Corrigir esses pontos
+
+nas$endereco = if_else(nas$lugar == "Ateliê Artimpério",
+                       "Rua Barão de Vassouras, 19,Casario Shopping , Rio de Janeiro",
+                       nas$endereco)
+nas$endereco = if_else(nas$lugar == "Talentos da Roça, Cultura e Cidadania",
+                       "Rua Geraldino Silva, Porciúncula - RJ",
+                       nas$endereco)
+
+#juntas as duas base de dados que estão com problemas
+
+BD2 = full_join(nas,errados)
+
 #Gerar o geocode : 
-for ( i in 1:6){
-  aux = geocode(as.character(errados$endereco[i])) 
+for ( i in 1:dim(BD2)[1]){
+  aux = geocode(as.character(BD2$endereco[i])) 
   longitudeAux = aux$lon
   latitudeAux = aux$lat
-  errados$longitude[i] = longitudeAux
-  errados$latitude[i] = latitudeAux
+  BD2$longitude[i] = longitudeAux
+  BD2$latitude[i] = latitudeAux
 }
+
+#Gerarei um vetor com o  nomes dos lugares para serem corrigidos
+
+nomes_corrigir = BD2 %>% 
+  select(lugar) %>% 
+  pull()
+
+#Irei apagar do tibble casas os nomes com endereços errados
+
+casas = casas %>% 
+  filter(!(lugar %in% nomes_corrigir))
+
+#Agora irei juntar todos os endereços certos para o tibble casas
+
+casas_corrigidas = full_join(casas,BD2)
+write_rds(casas_corrigidas,"casas_corrigidas.rds")
+
 
 
