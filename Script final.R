@@ -147,3 +147,5 @@
     hideGroup("Calor")
 
   
+library(htmlwidgets)
+saveWidget(mapaGeral, file="F://GitHub//Mapa-Cultural//Mapa//index.html")
