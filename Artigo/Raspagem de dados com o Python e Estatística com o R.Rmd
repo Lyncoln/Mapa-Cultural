@@ -35,11 +35,35 @@ De acordo com Barros & Ziviani (2009), a área da Cultura sofre com uma baixa in
 
 ## Método
 
+Para realizar essa pesquisa, foi necessário raspar informações de espaços culturais presentes no Estado do Rio de Janeiro através do site mapadecultura.rj.gov.br. Foi utilizado a linguagem de programação python com as bíbliotecas scrapy e re para o processo de raspagem e o R com as bíbliotecas tidyverse, leaflet, ggmap, readxl, leaflet.extras e rgdal.
+
 
 #### Material com o Python
 
+Foi criado uma "spider" utlizando o pacote scrapy do python que "rasteja" pelo site do mapadecultura na aba espaços culturais. O processo começa com o link da primeira aba da categoria espaços culturais e com isso o python irá guardar o link de todas os posts de espaços culturais presentes na aba. Com os links de cada post, o código irá para o site do post e em seguida irá salvar em uma variável o código html de todo o corpo de texto, e utilizando o pacote re, irá filtrar o endereço, em seguida irá extrair o nome do lugar e salvar em um documento txt no formato "titulo";"endereço".Com toda os posts da primeira aba extraídos, o código irá analisar se existe um link para próxima aba, se existir, o processo irá se repetir para aquela aba.
+Com todos as informações que precisamos extraídas, iremos utilizar o documento txt gerado para trabalharmos na linguagem R.
+
+
+
+
+
 
 #### Visualização de dados com o R
+
+Com o arquivo txt gerado anteriormente, foi preciso um pequeno tratamento manual pois algumas poucas vezes houve erro de enconding por falta de padrão presente no site do mapacultural que apresentava problemas para o R. Também observamos que quando há uma rede de lugares, por exemplo cinemas, o site agrupava os endereços em um só post, então tivemos que separar esses lugares de modo que cada um possua seu próprio nome e endereço.
+
+Foi utilizado o pacote readxl para que importassemos o arquivo txt para o R em formato de um tibble e em seguida foi criado colunas chamadas de "latitude" e "longitude" preenchidas todas com 999 para que depois possemos preenchelas com os dados geográficos de cada endereço do tibble.
+
+Por falta de padrão de endereços no site, foi criado um processo utilizando o pacote stringR em que cada endereço será analisado e se não houver contido a palavra "RJ" ou "Rio de Janeiro" em alguma parte, o código irá concatenar "Rio de Janeiro" no final.
+
+Foi preciso adquirir uma API do google que nos permitisse acessar dados do google map, foi necessário realizar cadastro na plataforma google cloud e configurar a API para que fosse possível utilizar o R para obter dados de latitude e longitude.
+
+Com o pacote ggmap, cadastramos a chave da API para assim utilizarmos a função geocode para que ela retorne a latitude e longitude de cada endereço disponível no tibble. Alguns poucos lugares apresentaram erro na sua geolocalização por causa de possíveis erros de endereço no site ou até mesmo por estarem incompletos. Foi feito uma rápida pesquisa para que esses problemas fossem resolvidos e assim criamos um processo em que utlizamos a função geocode em cada endereço do tibble anteriormente criado e salvasse sua latitude e longitude nas devidas colunas. Assim obtivemos um tibble com nome, endereço, latitude e longitude de todos os espaços culturais presentes no site mapadecultura.rj.gov.br .
+
+
+
+
+
 
 
 ## O Mapa da Cultura
