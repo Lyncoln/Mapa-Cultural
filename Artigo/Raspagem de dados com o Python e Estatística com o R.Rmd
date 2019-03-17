@@ -1,0 +1,58 @@
+---
+title: "Raspagem de dados com o Python e Estatística com o R: Um estudo dos equipamentos culturais no estado do Rio de Janeiro"
+author: "Lyncoln  & Steven"
+date: "16 de março de 2019"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introdução
+
+Até a sua extinção o Ministério da cultura afirmava que seus resultados mostravam as grandes diversidades artísticas e culturais existentes nos municípios. Todavia, falava muito pouco sobre os equipamentos culturais.
+
+O Brasil não tem um quadro de informações sobre a cultura disponível para qualquer cidadão. O que temos são tentativas de atender a demanda com informações a partir de pesquisas pontuais. Dentre as pesquisas cumpre registrar o papel do IBGE com diversas pesquisas como o Sistema de Indicadores Culturais (2003, 2005) e o perfil de informações básicas municipais – Cultura  (Munic Cultura, 2006). Essas pesquisas, que não são contínuas, são a melhores fontes de informações sobre equipamentos culturais. 
+
+Nesse sentido, o que se pretende com esse trabalho é explorar as informações oficiais sobre os equipamentos culturais. Buscamos criar um mecanismo contínuo de informações sobre os equipamentos culturais do estado do Rio de Janeiro: o Mapa da Cultura.
+
+A construção desse mapa será util para responder alguns questionamentos:
+
+1.Existe uma assimetria na distribuição de equipamentos culturais no estado?  
+2.Se existir, essa assimetria leva a desigualdade na distribuição dos equipamentos culturais do Estado?  
+3. Como deixar disponível as informações geolocalizadas contidas na secretaria Estado do Rio de Janeiro?
+
+A partir das informações disponíveis na secretaria de Cultura do Estado do Rio de Janeiro, buscaremos raspar dados com o Python e gerar visualizações de dados com o R para a ánalise desses questionamento.
+
+Este trabalho está dividido em 04 etapas. A seguir está uma análise da gestão dos equipamentos culturais. Em seguida, será detalhada as etapas para a raspagem de dados utilizando o Python. Após ess etapa, vamos mostrar o procedimento para a geração do mapa da cultura utilizando o R. Seguido por uma análise da concentração e da desigualdade dos equipamentos culturais. Finalmente, vamos apontar alguns indicadores de desigualdade espacial no que tange a distribuição dos equipamentos no estado do Rio de Janeiro.
+
+## Ausência de Gestão Cultural
+
+De acordo com Barros & Ziviani (2009), a área da Cultura sofre com uma baixa institucionalização e despreparo dos municípios quanto a importância das informações das políticas voltadas para o setor. Sem dados torna-se impossível a alocação de equipamentos culturais de forma eficiente e justa. Dados sobre a cultura são fundamentais para uma boa politica cultural. Todavia, no Brasil, existem muito poucas informações sobre a gestão cultural. isso se deve, em grande parte, ao jeito informal que o setor da cultura representa no Estado Brasileiro. Assim, “em sua maioria, a gestão da cultura encontra-se acoplada a outro setor, como o turismo, a educação e até mesmo a saúde, como já ocorreu em tempos passados na instancia federal” (Barros & Ziviani, 2009).
+
+“Nesse sentido, em sua maioria, o conceito está associado a noção de direitos culturais como parte dos direitos humanos sendo a dimensão cultural indispensável e, acima de tudo, estratégica para qualquer projeto de desenvolvimento. Por conseguinte, o reconhecimento e a valorização da diversidade cultural estão ligados à democracia cultural, democratização da gestão cultural, participação da sociedade civil nas decisões políticas e no processo de Gestão Pública descentralização da produção entre outros aspectos (Barros & Ziviani, 2009).
+
+## Método
+
+
+#### Material com o Python
+
+
+#### Visualização de dados com o R
+
+
+## O Mapa da Cultura
+
+
+## Resultados do Mapa da Cultura
+
+
+## Conclusão
+
+## Referências
+
+BARROS, José Márcio & ZIVIANI, Paula Equipamentos, meios e atividades culturais nos municípios brasileiros: indicadores de diferenças, desigualdades e diversidade cultural IN:  CALABRE, Lia Políticas culturais : reflexões e ações. São Paulo : Itaú Cultural ; Rio de Janeiro : Fundação Casa de Rui Barbosa, 2009.  
+IBGE.  Sistema  de  informações  e  indicadores  culturais  2003-2005.  v.  22.  Rio  de Janeiro: IBGE, 2007. 129 p.
+_____. Pesquisa dos municípios brasileiros – Cultura 2006. Rio de Janeiro: IBGE, 2007. 268 p.
+_____. Sistema de informações e indicadores culturais 2003. V. 18. Rio de Janeiro: IBGE, 2006. 126 p.
