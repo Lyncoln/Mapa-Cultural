@@ -2,12 +2,17 @@
 title: "Raspagem de dados com o Python e Estatística com o R: Um estudo dos equipamentos culturais no estado do Rio de Janeiro"
 author: "Lyncoln  & Steven"
 date: "16 de março de 2019"
-output: word_document
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+```{r include=FALSE}
+library(tidyverse); library(leaflet); library(ggmap); library(readxl); library(leaflet.extras); library(rgdal)
+```
+
 
 ## Introdução
 
@@ -58,7 +63,9 @@ Por falta de padrão de endereços no site, foi criado um processo utilizando o 
 
 Foi preciso adquirir uma API do google que nos permitisse acessar dados do google map, foi necessário realizar cadastro na plataforma google cloud e configurar a API para que fosse possível utilizar o R para obter dados de latitude e longitude.
 
-Com o pacote ggmap, cadastramos a chave da API para assim utilizarmos a função geocode para que ela retorne a latitude e longitude de cada endereço disponível no tibble. Alguns poucos lugares apresentaram erro na sua geolocalização por causa de possíveis erros de endereço no site ou até mesmo por estarem incompletos. Foi feito uma rápida pesquisa para que esses problemas fossem resolvidos e assim criamos um processo em que utlizamos a função geocode em cada endereço do tibble anteriormente criado e salvasse sua latitude e longitude nas devidas colunas. Assim obtivemos um tibble com nome, endereço, latitude e longitude de todos os espaços culturais presentes no site mapadecultura.rj.gov.br .
+Com o pacote ggmap, cadastramos a chave da API para assim utilizarmos a função geocode para que ela retorne a latitude e longitude de cada endereço disponível no tibble. Alguns poucos lugares apresentaram erro na sua geolocalização por causa de possíveis erros de endereço no site ou até mesmo por estarem incompletos. Foi feito uma rápida pesquisa para que esses problemas fossem resolvidos e assim criamos um processo em que utlizamos a função geocode em cada endereço do tibble anteriormente criado e salvasse sua latitude e longitude nas devidas colunas. Assim obtivemos um tibble com nome, endereço, latitude e longitude de todos os espaços culturais presentes no site mapadecultura.rj.gov.br.
+
+Com o tibble completo de informações, utilizamos a função readOGR do pacote rgdal para ler a malha dos municípios do estado do Rio de Janeiro, para em seguida utilizar o pacote leaflet, que gera um mapa global com o RJ marcado. Configuramos o mapa para que todos os endereços do tibble sejam marcados. Para melhor visualização, criamos marcadores de circulos e também um mapa de calor. Há possibilidade de observar dois tipos diferentes de mapas, o Esri.WorldImagery ou o CartoDB.
 
 
 
@@ -67,6 +74,44 @@ Com o pacote ggmap, cadastramos a chave da API para assim utilizarmos a função
 
 
 ## O Mapa da Cultura
+
+```{r echo=FALSE}
+RiodeJaneiro = readOGR(dsn="G://GitHub//Mapa-Cultural//Malha_shp",layer="33MUE250GC_SIR",
+                         use_iconv = TRUE,
+                         encoding = "UTF-8")
+casas_corrigidas = read_rds("G://GitHub//Mapa-Cultural//casas_corrigidas.rds")
+
+mapaGeral = leaflet(RiodeJaneiro,
+                      options = leafletOptions(minZoom = 1)) %>% 
+    addTiles() %>% 
+    setView(lng=-42.5303, lat=-22.1, zoom = 9) %>%
+    addPolygons(color = "#444444", weight = 1, smoothFactor = 0.5,
+                opacity = 1.0, fillOpacity = 0.2,
+                fillColor = 'blue',
+                highlightOptions = highlightOptions(color = "white", weight = 2,
+                                                    bringToFront = FALSE),
+                popup = RiodeJaneiro$NM_MUNICIP) %>%
+    addCircles(lng = as.numeric(casas_corrigidas$longitude),
+               lat =  as.numeric(casas_corrigidas$latitude),
+               popup = casas_corrigidas$lugar,color = "Red",
+               group = "Circulos") %>% 
+    addHeatmap(lng = as.numeric(casas_corrigidas$longitude),
+               lat =  as.numeric(casas_corrigidas$latitude)
+               ,radius = 10,
+               group = "Calor") %>% 
+    addProviderTiles(providers$Esri.WorldImagery,group = "Esri.WorldImagery") %>% 
+    addProviderTiles(providers$CartoDB,group = "CartoDB") %>% 
+    addLayersControl(overlayGroups = c("Circulos","Calor"),
+                     baseGroups = c("Esri.WorldImagery","CartoDB"),
+                     options = layersControlOptions(collapsed = FALSE)) %>% 
+    hideGroup("Calor")
+
+mapaGeral
+
+```
+
+
+
 
 
 ## Resultados do Mapa da Cultura
