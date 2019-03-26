@@ -12,7 +12,15 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r include=FALSE}
 library(tidyverse); library(leaflet); library(ggmap); library(readxl); library(leaflet.extras); library(rgdal)
 ```
+## Resumo
 
+Este artigo tem o propósito de ...
+
+**Palavras-chave:** visualização em mapa, raspagem de dados, equipamentos culturais, desigualdade.
+
+## Abstract
+
+**Keywords:** map visualization, data scraping, cultural equipment, inequality.
 
 ## Introdução
 
@@ -28,19 +36,32 @@ A construção desse mapa será util para responder alguns questionamentos:
 2.Se existir, essa assimetria leva a desigualdade na distribuição dos equipamentos culturais do Estado?  
 3. Como deixar disponível as informações geolocalizadas contidas na secretaria Estado do Rio de Janeiro?
 
-A partir das informações disponíveis na secretaria de Cultura do Estado do Rio de Janeiro, realizou-se a raspagem de dados com o Python e gerarou-se visualizações de dados com o R para a ánalise desses questionamentos.
+A partir das informações disponíveis na secretaria de Cultura do Estado do Rio de Janeiro, realizou-se a raspagem de dados com o Python e gerou-se visualizações de dados com o R para a ánalise desses questionamentos.
 
 Este trabalho está dividido em 04 etapas. A seguir apresenta-se uma análise da gestão dos equipamentos culturais. Em seguida, descreve-se de forma detalhada as etapas para a raspagem de dados utilizando o Python. Após essa etapa, expõe-se o procedimento para a geração do mapa da cultura utilizando o R. Seguido a esta exposição parte-se para uma análise da concentração e da desigualdade dos equipamentos culturais. Finalmente, aponta-se alguns indicadores de desigualdade espacial no que tange a distribuição dos equipamentos no estado do Rio de Janeiro.
 
-## Ausência de Gestão Cultural
+### Ausência de Gestão Cultural
 
 De acordo com Barros & Ziviani (2009), a área da Cultura sofre com uma baixa institucionalização e despreparo dos municípios quanto a importância das informações das políticas voltadas para o setor. Sem dados torna-se impossível a alocação de equipamentos culturais de forma eficiente e justa. Dados sobre a cultura são fundamentais para uma boa politica cultural. Todavia, no Brasil, existem muito poucas informações sobre a gestão cultural. Isso se deve, em grande parte, ao jeito informal que o setor da cultura representa no Estado Brasileiro. Assim, “em sua maioria, a gestão da cultura encontra-se acoplada a outro setor, como o turismo, a educação e até mesmo a saúde, como já ocorreu em tempos passados na instancia federal” (Barros & Ziviani, 2009).
 
 “Nesse sentido, em sua maioria, o conceito está associado a noção de direitos culturais como parte dos direitos humanos sendo a dimensão cultural indispensável e, acima de tudo, estratégica para qualquer projeto de desenvolvimento. Por conseguinte, o reconhecimento e a valorização da diversidade cultural estão ligados à democracia cultural, democratização da gestão cultural, participação da sociedade civil nas decisões políticas e no processo de Gestão Pública descentralização da produção entre outros aspectos (Barros & Ziviani, 2009).
 
-## Método
+## Objetivo
+
+O objetivo geral deste trabalho é analisar a visualização em mapa dos instrumentos culturais dos municípios do Estado do Rio de Janeiro.
+Os objetivos específicos são:
+
++ construir a visualização do mapa da cultura com os dados dos endereços georeferenciados dos equipamentos culturais;
++ avaliar a distribuição espacial dos equipamentos culturais;
++ refletir sobre a desigualdade da distribuição espacial dos equipamentos culturais.
+
+
+## Material e Método
 
 Para realizar essa pesquisa, foi necessário raspar informações de espaços culturais presentes no Estado do Rio de Janeiro através do site mapadecultura.rj.gov.br. Na figura 1 observa-se a disposição destas informações no referido site. Foi utilizado a linguagem de programação python com as bíbliotecas scrapy e re, para o processo de raspagem, e o R com as bíbliotecas tidyverse, leaflet, ggmap, readxl, leaflet.extras e rgdal, para a elaboração da visualização dos dados em mapas.
+
+[] incluir a figura 1 que encontra-se no arquivo https://github.com/Lyncoln/Mapa-Cultural/blob/master/Artigo/EspacoCulturalRJ.png
+
 
 
 #### Material com o Python
@@ -73,7 +94,9 @@ Com o tibble completo de informações, utilizou-se a função readOGR do pacote
 
 
 
-## O Mapa da Cultura
+## Resultados e Discussão
+
+### O Mapa Cultural
 
 ```{r echo=FALSE}
 RiodeJaneiro = readOGR(dsn="G://GitHub//Mapa-Cultural//Malha_shp",layer="33MUE250GC_SIR",
@@ -114,10 +137,19 @@ mapaGeral
 
 
 
-## Resultados do Mapa da Cultura
+### Resultados do Mapa da Cultura
 
 
 ## Conclusão
+
+Neste trabalho apresentou-se uma análise da visualização em mapa do conjunto de equipamentos culturais dos municípios do Estado do Rio de Janeiro, listados no site da secretaria de cultura do governo do Estado, no primeiro trimestre de 2019. 
+A visualização do mapa foi construída utilizando-se de forma integrada as linguagens python e R, que possibilitou de forma eficiente a raspagem dos dados e a construção do mapa. 
+
+A partir da visualização do mapa da cultura, pode-se avaliar como os equipamentos culturais se distribuem pelos municípios, evidenciando-se três regiões do Estado com uma grande área marcada notadamente pela ausência destes equipamentos, áreas estas que foram denominadas de deserto cultural. A primeira área compreende a região xxxx; a segunda área compreende a região xxx e a terceira área ...
+
+Diante deste cenário, fez-se uma reflexão quanto a desigualdade da distribuição espacial destes equipamentos culturais, tomando como base o Museo do Amanhã que foi inaugurado em dezembro de 2015 com um custo de construção de aproximadamente Duzentos e quinze milhões de reais. Supondo que este montante fosse direcionado para a construção de equipamentos culturais de aproximadamente Um milhão de reais, seria possível agregar pelo menos mais dois equipamentos por município. Evidencia-se neste exemplo a prática de uma política pública que perpetua a desigualdade do acesso da população à bens culturais ao concentrar a aplicação de recursos numa área que possue uma quantidade de equipamentos culturais acima da média dos demais municípios.
+
+As lonas culturais ou mesmo equipamentos não faraônicos, por terem menores custos, podem ser uma alternativa para a reduzir a desigualdade cultural presente no Estado.
 
 
 
@@ -127,3 +159,5 @@ BARROS, José Márcio & ZIVIANI, Paula Equipamentos, meios e atividades culturai
 IBGE.  Sistema  de  informações  e  indicadores  culturais  2003-2005.  v.  22.  Rio  de Janeiro: IBGE, 2007. 129 p.
 _____. Pesquisa dos municípios brasileiros – Cultura 2006. Rio de Janeiro: IBGE, 2007. 268 p.
 _____. Sistema de informações e indicadores culturais 2003. V. 18. Rio de Janeiro: IBGE, 2006. 126 p.
+
+
