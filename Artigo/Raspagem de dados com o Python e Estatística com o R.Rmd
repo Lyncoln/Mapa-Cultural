@@ -58,20 +58,24 @@ Os objetivos específicos são:
 
 ## Material e Método
 
+#### Sobre a raspagem de dados
+
+Michell (2015) afirma que a Internet está repleta de dados não estruturados e semi-estruturados que nunca foram disponibilizados como um banco de dados formal: muitas páginas da Web contêm conteúdo de texto que é legível por humanos, mas não é facilmente legível por máquina. A raspagem de dados (Webscraping) preenche essa lacuna e abre um novo mundo de dados para os pesquisadores, extraindo automaticamente conjuntos de dados estruturados de conteúdo legível por humanos (Mitchell, 2015). 
+
+Já Vargiu, & Urru (2012) definem a raspagem de dados como o conjunto de técnicas usadas para obter automaticamente informações de um site, em vez de copiá-las manualmente. De acordo com os autores, o objetivo de um raspador de dados Web é procurar determinados tipos de informações, extrair e agregar em novas páginas da Web. Em particular, os raspadores estão focados em transformar dados não estruturados e salvá-los em bancos de dados estruturados (VARGIU, & URRU, 2012).
+
+Desse modo, um raspador de dados acessa páginas da web, localiza elementos de dados especificados na página, os extrai e finalmente salva esses dados como um banco de dados estruturados.  Esse processo basicamente imita a maneira o formato de operação de um navegador da Web, acessando páginas da Web e salvando-as em um computador.  
+
+Assim, um web scraper automatiza o processo complicado de coleta de dados de muitas páginas da Web. Em resumo, a raspagem de dados da Web é o processo de extrair e criar um banco de dados estruturado de um site. Neste artigo, nos concentramos nas técnicas que extraem o conteúdo da página da secretaria de estado da cultura doo rio de janeiro na Web.
+
 Para realizar essa pesquisa, foi necessário raspar informações de espaços culturais presentes no Estado do Rio de Janeiro através do site mapadecultura.rj.gov.br. Na figura 1 observa-se a disposição destas informações no referido site. Foi utilizado a linguagem de programação python com as bíbliotecas scrapy e re, para o processo de raspagem, e o R com as bíbliotecas tidyverse, leaflet, ggmap, readxl, leaflet.extras e rgdal, para a elaboração da visualização dos dados em mapas.
 
 [] incluir a figura 1 que encontra-se no arquivo https://github.com/Lyncoln/Mapa-Cultural/blob/master/Artigo/EspacoCulturalRJ.png
-
-
 
 #### Material com o Python
 
 Foi criado uma "spider" utlizando o pacote scrapy do python que "rasteja" pelo site do mapadecultura na aba espaços culturais. O processo começa com o link da primeira aba da categoria espaços culturais e com isso o python irá guardar o link de todas os posts de espaços culturais presentes na aba. Com os links de cada post, o código irá para o site do post e em seguida irá salvar em uma variável o código html de todo o corpo de texto, e utilizando o pacote re, irá filtrar o endereço, em seguida irá extrair o nome do lugar e salvar em um documento txt no formato "titulo";"endereço".Com toda os posts da primeira aba extraídos, o código irá analisar se existe um link para próxima aba, se existir, o processo irá se repetir para aquela aba.
 Com todas as informações necessárias extraídas, gerou-se um documento txt para prosseguir com a análise na linguagem R.
-
-
-
-
 
 
 #### Visualização de dados com o R
@@ -87,12 +91,6 @@ Foi preciso adquirir uma API do google que permitisse acessar dados do google ma
 Com o pacote ggmap, cadastramos a chave da API para assim utilizarmos a função geocode para que ela retorne a latitude e longitude de cada endereço disponível no tibble. Alguns poucos lugares apresentaram erro na sua geolocalização por causa de possíveis erros de endereço no site ou até mesmo por estarem incompletos. Foi feito uma rápida pesquisa para que esses problemas fossem resolvidos e assim criamos um processo em que utiliza-se a função geocode em cada endereço do tibble anteriormente criado e salve sua latitude e longitude nas devidas colunas. Assim obtive-se um tibble com nome, endereço, latitude e longitude de todos os espaços culturais presentes no site mapadecultura.rj.gov.br.
 
 Com o tibble completo de informações, utilizou-se a função readOGR do pacote rgdal para ler a malha dos municípios do estado do Rio de Janeiro, para em seguida utilizar o pacote leaflet, que gerou um mapa global com o RJ marcado. Configurou-se o mapa para que todos os endereços do tibble sejam marcados. Para melhor visualização, criou-se marcadores de circulos e também um mapa de calor. Há possibilidade de observar dois tipos diferentes de mapas, o Esri.WorldImagery ou o CartoDB.
-
-
-
-
-
-
 
 ## Resultados e Discussão
 
@@ -159,5 +157,5 @@ BARROS, José Márcio & ZIVIANI, Paula Equipamentos, meios e atividades culturai
 IBGE.  Sistema  de  informações  e  indicadores  culturais  2003-2005.  v.  22.  Rio  de Janeiro: IBGE, 2007. 129 p.
 _____. Pesquisa dos municípios brasileiros – Cultura 2006. Rio de Janeiro: IBGE, 2007. 268 p.
 _____. Sistema de informações e indicadores culturais 2003. V. 18. Rio de Janeiro: IBGE, 2006. 126 p.
-
-
+MITCHELL R. 2015. Web Scraping with Python: Collecting Data from the Modern Web. Sebastopol, CA: O’Reilly Media.
+VARGIU, Eloisa; URRU, Mirko Exploiting web scraping in a collaborative filtering- based approach to web advertising. Artificial Intelligence Research, 2013, Vol. 2, No. 1 ISSN 1927-6974 E-ISSN 1927-6982 44. Online Published: December 5, 2012 DOI: 10.5430/air.v2n1p44 URL: http://dx.doi.org/10.5430/air.v2n1p44
