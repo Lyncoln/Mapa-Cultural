@@ -72,6 +72,20 @@ Para realizar essa pesquisa, foi necessário raspar informações de espaços cu
 
 [] incluir a figura 1 que encontra-se no arquivo https://github.com/Lyncoln/Mapa-Cultural/blob/master/Artigo/EspacoCulturalRJ.png
 
+
+#### Sobre a visualização de dados
+
+Para apresentar os resultados de bancos de dados são utilizados métodos de comunicação,
+como por exemplo, tabelas, gráficos ou mapas.  Algumas ferramentas gerais de visualização têm sido propostas, como o Box-plot (Tukey 1977, p. 41). Mapa de árvores (Johnson, 1992), barômetro da sustentabilidade (Kronemberger et al., 2008), entre muitos outros. Entre as novas metodologias de visualização de dados espaciais, destaca-se o mapa anamórfico. O mapeamento anamórfico visa adaptar a forma do mapa não à realidade física, mas sim à realidade percebida. Essa distorção do espaço pode ser construída por um modelo matemático a partir de dados quantitativos reais. O mapa não é mais considerado como um modelo de realidade geográfica, mas principalmente como um documento de comunicação (DENAIN & LANGLOIS, 1998). Cada uma dessas abordagens tem metodologia totalmente distinta e são utilizadas para apresentar diferentes resultados dependendo do contexto de comunicação onde a visualização está inserida.
+A nossa abordagem, o mapa de calor, é uma representação gráfica interativa, servindo como
+uma ferramenta de visualização de dados espaciais, onde os valores individuais são
+representados por um ponto e uma mancha de calor. Ele compara as distancias entre os pontos simultaneamente agrupando-os pelo grau de proximidade dos locais. O termo mapa de calor foi originalmente cunhado e registrado pelo designer software Cormac Kinney em 1991 (Guimarães et al., 2014).
+
+##### Mapas interativos com Leaflet
+
+Mapas estáticos são úteis para criar figuras para relatórios e apresentações. Todavia, às vezes, desejamos interagir com seus dados. Para isso, podemos utilizar o pacote chamado Leaflet para o  R para sobrepor os dados espaciais sobre mapas interativos. A ideia dessa abordagem  é utilizar o google maps com dados espacias sobrepostos. O Leaflet é uma biblioteca JavaScript de código aberto que pode ser usada para criar mapas interativos compatíveis com dispositivos móveis.
+
+
 #### Material com o Python
 
 Foi criado uma "spider" utlizando o pacote scrapy do python que "rasteja" pelo site do mapadecultura na aba espaços culturais. O processo começa com o link da primeira aba da categoria espaços culturais e com isso o python irá guardar o link de todas os posts de espaços culturais presentes na aba. Com os links de cada post, o código irá para o site do post e em seguida irá salvar em uma variável o código html de todo o corpo de texto, e utilizando o pacote re, irá filtrar o endereço, em seguida irá extrair o nome do lugar e salvar em um documento txt no formato "titulo";"endereço".Com toda os posts da primeira aba extraídos, o código irá analisar se existe um link para próxima aba, se existir, o processo irá se repetir para aquela aba.
@@ -159,3 +173,11 @@ _____. Pesquisa dos municípios brasileiros – Cultura 2006. Rio de Janeiro: IB
 _____. Sistema de informações e indicadores culturais 2003. V. 18. Rio de Janeiro: IBGE, 2006. 126 p.
 MITCHELL R. 2015. Web Scraping with Python: Collecting Data from the Modern Web. Sebastopol, CA: O’Reilly Media.
 VARGIU, Eloisa; URRU, Mirko Exploiting web scraping in a collaborative filtering- based approach to web advertising. Artificial Intelligence Research, 2013, Vol. 2, No. 1 ISSN 1927-6974 E-ISSN 1927-6982 44. Online Published: December 5, 2012 DOI: 10.5430/air.v2n1p44 URL: http://dx.doi.org/10.5430/air.v2n1p44
+
+DENAIN, J. C ; LANGLOIS, P. Cartographie em anamorphose, Mappe Monde, Avignon/França, v.49, 1998.
+GUIMARÃES, J. T. F. et al. Palynology of the Middle Miocene—Pliocene Novo Remanso
+Formation, Central Amazonia, Brazil. Asociación Paleontológica Argentina: BioOne 2014.
+JOHNSON, B. TreeViz: treemap visualization of hierarchically structured information. 1992,
+ACM. p.369-370.
+KRONEMBERGER, D. M. P. et al. Desenvolvimento sustentável no brasil: uma análise a partir da aplicação do barômetro da sustentabilidade. Sociedade & Natureza. 20: 25-50 p. 2008.
+TUKEY, J. W. Box-and-Whisker Plots. 2C in: Exploratory Data Analysis. Reading, MA: Addison-Wesley, pp. 39-43, 1977.
