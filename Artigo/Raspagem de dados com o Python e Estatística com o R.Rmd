@@ -146,10 +146,31 @@ mapaGeral
 ```
 
 
+O mapa está disponível no endereço : https://rpubs.com/StevenDuttRoss/Mapa-Cultural. A sua navegação é intuitiva e totalmente interativa, possibilitando que o usuário tenha informação de qual município está visualizando e seus respectivos aparelhos culturais com apenas alguns cliques.
 
-
+No canto superior direito podemos trocar o layout do mapa e seus marcadores. É possível visualiza-lo com formato "Esri.WorldImagery" que apresenta uma visão mais realistica, ou com "CartoDB" que lembra o formato clássico de mapas. Para a visualização dos marcadores, pode-se escolher entre "Calor" que possibilita a visualização de um mapa de calor,deixando visível a concentração de aparelhos por região, ou "Circulos" que torna possível a visão mais exata da localização de cada equipamento cultural junto com seu nome se clicado.
 
 ### Resultados do Mapa da Cultura
+
+Mapa 1 : https://scontent.fcaw1-1.fna.fbcdn.net/v/t1.15752-9/56300169_2042314009169974_6706279742632361984_n.png?_nc_cat=103&_nc_ht=scontent.fcaw1-1.fna&oh=273a520c4a4c877c697dba5ea0b36862&oe=5D3F0944
+
+De acordo com o mapa da figura 1, podemos verificar uma grande concentração dos equipamentos culturais na região metropolitana do Rio de Janeiro e na capital. Podemos ver 'area com muitos equipamentos culturais e outras áreas sem nenhum.Esta comparação sugere que há uma grande disparidade entre os municípios do Estado do Rio de Janeiro, todavia, essa concentração dos equipamentos culturais não acontece apenas entres os municípios. Há desigualdades espaciais dentro dos municípios , um exemplo disso pode ser observado no mapa 2, no municipio do Rio de Janeiro. Os equipamentos culturais estão concentrados na zona sul da cidade acompanhando a orla. Está é a região mais rica da cidade do Rio de Janeiro e também a região com mais equipamentos culturais oficiais. A exceção da zona sul, todo o resto do municipio do rio de janeiro parece esquecido pelo poder público. 
+
+Todavia, para uma comparação justa, devemos levar em consideração também, o tamanho da população da cidade. O Rio de Janeiro tem 6 milhões de habitantes equanto o seu município vizinho niterói, tem algo em torno de 500 mil.Vamos observar municipios com aproximadamente a mesma população : Niterói e São João de Meriti. Enquanto Niterói tem mais de 30 equipamentos, São João de Meriti tem apenas 07 aparelhos.
+
+A relevância desse trabalho se apresenta não so ao observar essas desigualdades  mas também como ferramenta de gestão ,  a alocação do próximo equipamento cultural deve obrigatoriamente incorporar as problematicas geradas pela as desigualdades espaciais apresentadas nesse trabalho.
+
+Cumpre registrar que esse trabalho leva em consideração apenas os equipamentos culturais oficiais, isso é, aquelas divulgados pela secretaria de cultura do Estado do Rio de Janeiro. Destaca-se que no site oficial da secretaria, os municípios de Italva, Guapimirim e Cardoso Moreira não apresentam nenhum aparelho cultural. Para esses municípios, há uma urgência de equipamentos culturais. 
+
+No mapa 3 destaca-se a diferença entre a capital e o interior do Estado. Enquanto na região metropolitana temos muitos equipamentos culturais, o interior do Estado  está em um deserto de equipamentos culturais.
+
+'''O Estado  deveria melhorar a gestão dos equipamentos culturais e investir mais neles (construção de novos) 
+
+Mapa 2 https://scontent.fcaw1-1.fna.fbcdn.net/v/t1.15752-9/56237510_417166895760742_3570657001815932928_n.png?_nc_cat=104&_nc_ht=scontent.fcaw1-1.fna&oh=e1d872968405f4f23b2e87793c7cea70&oe=5D44AB18
+
+Mapa 3 https://scontent.fcaw1-1.fna.fbcdn.net/v/t1.15752-9/56119378_2356037098052465_100732157210656768_n.png?_nc_cat=104&_nc_ht=scontent.fcaw1-1.fna&oh=4191df737e2ac0483f760ef40d535ef3&oe=5D374EDB
+
+
 
 
 ## Conclusão
@@ -157,7 +178,7 @@ mapaGeral
 Neste trabalho apresentou-se uma análise da visualização em mapa do conjunto de equipamentos culturais dos municípios do Estado do Rio de Janeiro, listados no site da secretaria de cultura do governo do Estado, no primeiro trimestre de 2019. 
 A visualização do mapa foi construída utilizando-se de forma integrada as linguagens python e R, que possibilitou de forma eficiente a raspagem dos dados e a construção do mapa. 
 
-A partir da visualização do mapa da cultura, pode-se avaliar como os equipamentos culturais se distribuem pelos municípios, evidenciando-se três regiões do Estado com uma grande área marcada notadamente pela ausência destes equipamentos, áreas estas que foram denominadas de deserto cultural. A primeira área compreende a região xxxx; a segunda área compreende a região xxx e a terceira área ...
+A partir da visualização do mapa da cultura, pode-se avaliar como os equipamentos culturais se distribuem pelos municípios, evidenciando-se três regiões do Estado com uma grande área marcada notadamente pela ausência destes equipamentos, áreas estas que foram denominadas de deserto cultural. A primeira área compreende a região de Guapimirim; a segunda área compreende a região de Italva e a terceira área Cardoso Moreira.
 
 Diante deste cenário, fez-se uma reflexão quanto a desigualdade da distribuição espacial destes equipamentos culturais, tomando como base o Museo do Amanhã que foi inaugurado em dezembro de 2015 com um custo de construção de aproximadamente Duzentos e quinze milhões de reais. Supondo que este montante fosse direcionado para a construção de equipamentos culturais de aproximadamente Um milhão de reais, seria possível agregar pelo menos mais dois equipamentos por município. Evidencia-se neste exemplo a prática de uma política pública que perpetua a desigualdade do acesso da população à bens culturais ao concentrar a aplicação de recursos numa área que possue uma quantidade de equipamentos culturais acima da média dos demais municípios.
 
