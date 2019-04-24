@@ -6,7 +6,7 @@ library(stringr)
 library(ggmap)
 library(tidyverse)
            
-register_google(key = "AIzaSyCEQJmgI0JUnVX0bRVWuAvjo9uG8lAT7ns")
+register_google(key = "-API AQUI-")
 
 
 
