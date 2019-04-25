@@ -16,6 +16,10 @@ str_split_fixed(teste, ",",n=5)[3]
 
 banco$Cidade = revgeocode(c(as.numeric(banco$longitude),as.numeric(banco$latitude)))
 
+#De acordo com Leo, testar
+
+banco<-banco %>% mutate(cidade = revgeocode(c(as.numeric(longitude),as.numeric(latitude))) )
+
 aux = c()
 for( i in 1:length(banco$longitude)){
   aux[i] =  revgeocode(c(as.numeric(banco$longitude[i]),as.numeric(banco$latitude[i])))
