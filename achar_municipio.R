@@ -1,10 +1,11 @@
-banco = readRDS("C://Users//tpc 02//Desktop//casas_corrigidas.rds")
+banco = readRDS(url("https://github.com/Lyncoln/Mapa-Cultural/raw/master/casas_corrigidas.rds"))
 banco
 
 revgeocode(c(as.numeric(banco$longitude[100]),as.numeric(banco$latitude[100])))
 library(stringr)
 library(ggmap)
 library(tidyverse)
+library(readxl)
            
 register_google(key = "-API AQUI-")
 
@@ -38,9 +39,10 @@ for(i in 1:length(aux)){
 teste = tibble(aux = aux, aux2 = aux2)
 View(teste)
 
-
-BasesMunicipios <- read_excel("C:/Users/tpc 02/Desktop/BasesMunicipios.xlsx")
-
+library(readr)
+BasesMunicipios <- read_delim("https://raw.githubusercontent.com/DATAUNIRIO/Base_de_dados/master/Municipios.csv", 
+                         ";", escape_double = FALSE, locale = locale(encoding = "ISO-8859-1"), 
+                         trim_ws = TRUE)
 
 municipios = BasesMunicipios$Munic
 
