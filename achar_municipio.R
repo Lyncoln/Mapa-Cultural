@@ -1,11 +1,11 @@
 banco = readRDS(url("https://github.com/Lyncoln/Mapa-Cultural/raw/master/casas_corrigidas.rds"))
 banco
 
-revgeocode(c(as.numeric(banco$longitude[100]),as.numeric(banco$latitude[100])))
+#revgeocode(c(as.numeric(banco$longitude[100]),as.numeric(banco$latitude[100])))
 library(stringr)
 library(ggmap)
 library(tidyverse)
-library(readxl)
+
            
 register_google(key = "-API AQUI-")
 
