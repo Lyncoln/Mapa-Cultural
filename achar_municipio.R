@@ -40,6 +40,9 @@ teste = tibble(aux = aux, aux2 = aux2)
 View(teste)
 
 library(readr)
+
+#ad <- read.csv("http://www-bcf.usc.edu/~gareth/ISL/Advertising.csv")
+#head(ad)
 BasesMunicipios <- read_delim("https://raw.githubusercontent.com/DATAUNIRIO/Base_de_dados/master/Municipios.csv", 
                          ";", escape_double = FALSE, locale = locale(encoding = "ISO-8859-1"), 
                          trim_ws = TRUE)
@@ -94,7 +97,48 @@ class(tabela)
 tabela<-data.frame(tabela)
 colnames(tabela)<-c("munic","eqqcultural")
 
+tabela <- edit(tabela)
 
-tabela[11]<-"armação dos búzios"
-tabela[24]<- "engenheiro paulo de frontin"
-tabela[82]<- "trajano de moraes"
+#tabela[11,1]<-"armação dos búzios"
+#tabela[24,1]<- "engenheiro paulo de frontin"
+#tabela[82,1]<- "trajano de moraes"
+
+saveRDS(tabela,file = "tabela.RDS")
+
+tabela$Munic<-paste0(tabela$munic," (rj)")
+
+
+
+
+library(readxl)
+library(dplyr)
+library(stringr)
+BasesMunicipios <- read_excel("~/GitHub/Base_de_dados/BasesMunicipios.xlsx")
+tabela<-readRDS("C:/Users/Steven/Documents/DIRETORIO DE TRABALHO DO R/tabela.RDS")
+View(BasesMunicipios)
+View(tabela)
+
+BasesMunicipios$Munic = BasesMunicipios$Munic %>% 
+  str_to_lower()
+BasesMunicipios<-BasesMunicipios %>% full_join(tabela)
+
+BasesMunicipios$eqqculturalpc<-(100000*BasesMunicipios$eqqcultural/BasesMunicipios$Populacao)
+summary(BasesMunicipios$eqqculturalpc)
+summary(BasesMunicipios$IDH)
+
+BasesMunicipios$eqqculturalpc[is.na(BasesMunicipios$eqqculturalpc)] <- 0              # Replace by 0
+
+cor(BasesMunicipios$eqqculturalpc,BasesMunicipios$IDH,method = "spearman")
+cor.test(BasesMunicipios$eqqculturalpc,BasesMunicipios$IDH,method = "spearman")
+
+library(ggplot2)
+library(ggthemes)
+ggplot(data = BasesMunicipios) +
+  aes(x = IDH, y = eqqculturalpc, color = Regiao, size = Renda_per_capita) +
+  geom_point() +
+  scale_colour_viridis_d(option  = "magma") +
+  labs(title = "",
+    x = "IDH",
+    y = "Eqq cultural")+
+    #subtitle = "bbb") +
+  theme_solarized()
