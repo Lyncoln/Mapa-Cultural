@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RASPAGEM DE DADOS COM O PYTHON E ESTATÍSTICA COM O R</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Lyncoln Sousa   Steven Ross   Luciane Alcoforado   Orlando Longo" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# RASPAGEM DE DADOS COM O PYTHON E ESTATÍSTICA COM O R
+## UM ESTUDO DA DESIGUALDADE ESPACIAL DE EQUIPAMENTOS CULTURAIS NO ESTADO DO RIO DE JANEIRO
+### Lyncoln Sousa <br> Steven Ross <br> Luciane Alcoforado <br> Orlando Longo
+
+---
+
+
+
+
+
+
+# Questões
+
+1. Existe uma assimetria na distribuição de equipamentos culturais no Estado do Rio de Janeiro?  
+2. No caso de existir, essa assimetria aponta uma desigualdade na distribuição dos equipamentos culturais do Estado?  
+3. Como deixar disponíveis as informações geolocalizadas contidas na secretaria Estado do Rio de Janeiro?
+
+
+---
+
+
+# Ausência de Gestão Cultural
+
+Barros &amp; Ziviani (2009), a área da Cultura sofre com uma baixa institucionalização e despreparo dos órgãos gestores dos municípios quanto à importância das informações das políticas voltadas para o setor. 
+
+Dados sobre a Cultura são fundamentais para uma boa política cultural. 
+
+Em sua maioria, a gestão da cultura encontra-se acoplada a outro setor, como o turismo, a educação e até mesmo a saúde, como já ocorreu em tempos passados na instancia federal” (Barros &amp; Ziviani, 2009).
+
+---
+
+# Objetivo
+
+O objetivo geral deste trabalho é analisar a visualização em mapa dos instrumentos culturais dos municípios do Estado do Rio de Janeiro.
+
+Os objetivos específicos são:
+
+•	Construir a visualização do mapa da cultura com os dados dos endereços georeferenciados dos equipamentos culturais;
+•	Avaliar a distribuição espacial dos equipamentos culturais;
+•	Refletir sobre a desigualdade da distribuição espacial dos equipamentos culturais no Estado do Rio de Janeiro.
+
+---
+
+# Procedimento com o Python
+
+Foi criado uma "spider" utlizando o pacote scrapy do Python que "rasteja" pelo site do mapa de cultura na aba espaços culturais. 
+
+O processo começa com o link da primeira aba da categoria espaços culturais e com isso o Python irá guardar o link de todos os posts de espaços culturais presentes na aba. 
+
+Com os links de cada post, o código irá para o site do post e em seguida irá salvar em uma variável o código html de todo o corpo de texto, e utilizando o pacote re, irá filtrar o endereço. 
+
+Em seguida irá extrair o nome do lugar e salvar em um documento no formato txt no formato "título" ; "endereço". 
+
+
+---
+background-image: url(https://raw.githubusercontent.com/Lyncoln/Mapa-Cultural/master/Artigo/EspacoCulturalRJ.png)
+background-position: 50% 50%
+class: center, bottom, inverse
+
+
+
+---
+
+# Visualização de dados com o R
+
+Foram criadas colunas chamadas de "latitude" e "longitude" preenchidas todas com 999.
+
+Foi criado um processo em que cada endereço foi padronizado para incluir a palavra "Rio de Janeiro" no final.
+
+Foi necessário adquirir acesso a uma API do google que permitisse acessar aos dados do google map para obter dados de latitude e longitude.
+
+Geramos o Mapa da Cultura - MC.Para melhor visualização, criamos o mapa de marcadores de círculos e o mapa de calor. Há possibilidade de selecionar dois tipos diferentes de mapas, o Esri.WorldImagery ou o CartoDB.
+
+
+---
+
+# O Mapa Cultural
+
+O mapa está disponível no endereço: http://rpubs.com/Lyncoln/mapaCultural. 
+
+A sua navegação é intuitiva e totalmente interativa, possibilitando que o usuário, com apenas alguns cliques, tenha informação de qual município está visualizando e seus respectivos aparelhos culturais.
+
+
+---
+background-image: url(https://raw.githubusercontent.com/Lyncoln/Mapa-Cultural/master/Apresentacao/Imagem1.png)
+background-position: 50% 50%
+class: center, bottom, inverse
+
+
+
+---
+background-image: url(https://raw.githubusercontent.com/Lyncoln/Mapa-Cultural/master/Apresentacao/Imagem2.png)
+background-position: 50% 50%
+class: center, bottom, inverse
+
+
+---
+background-image: url(https://raw.githubusercontent.com/Lyncoln/Mapa-Cultural/master/Apresentacao/Imagem3.png)
+background-position: 50% 50%
+class: center, bottom, inverse
+
+
+---
+
+
+# Conclusão
+A intenção deste trabalho foi visualizar o conjunto de equipamentos culturais dos municípios do Estado do Rio de Janeiro, listados no site da Secretaria de Cultura e Economia Criativa do Governo do Estado Fo Rio de Janeiro
+
+A visualização do mapa foi construída utilizando-se de forma integrada as linguagens Python e R, que possibilitou de forma eficiente a raspagem dos dados e a construção do mapa. 
+
+A partir deste Mapa da Cultura, podemos avaliar como os equipamentos culturais se distribuem pelos municípios, evidenciando-se três regiões do Estado com uma grande área marcada notadamente pela ausência destes equipamentos, áreas estas que foram denominadas de deserto cultural. 
+
+
+---
+background-image: url(https://raw.githubusercontent.com/Lyncoln/Mapa-Cultural/master/Apresentacao/Imagem4.png)
+background-position: 50% 50%
+class: center, bottom, inverse
+
+---
+
+Diante deste cenário, fez-se uma reflexão quanto à desigualdade da distribuição espacial destes equipamentos culturais, tomando como base o Museu do Amanhã que foi inaugurado em dezembro de 2015 com um custo de construção de aproximadamente Duzentos e quinze milhões de reais. 
+
+Supondo que este montante fosse direcionado para a construção de equipamentos culturais de aproximadamente um milhão de reais, seria possível agregar pelo menos mais dois equipamentos por município. 
+
+Evidencia-se neste exemplo a prática de uma política pública que perpetua a desigualdade do acesso da população aos bens culturais ao concentrar a aplicação de recursos numa única área que inclusive já possui uma grande quantidade de equipamentos culturais. 
+
+As lonas culturais ou mesmo equipamentos culturais que possuem formatos não faraônicos, por terem menores custos, podem ser uma alternativa para reduzir essa desigualdade cultural presente no Estado do Rio de Janeiro.
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
