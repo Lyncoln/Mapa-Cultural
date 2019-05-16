@@ -58,7 +58,7 @@ Os objetivos específicos são:
 
 # Procedimento com o Python
 
-Foi criado uma "spider" utlizando o pacote scrapy do Python que "rasteja" pelo site do mapa de cultura na aba espaços culturais. 
+Foi criado uma "spider" utilizando o pacote scrapy do Python que "rasteja" pelo site do mapa de cultura na aba espaços culturais. 
 
 O processo começa com o link da primeira aba da categoria espaços culturais e com isso o Python irá guardar o link de todos os posts de espaços culturais presentes na aba. 
 
