@@ -70,6 +70,7 @@ Em seguida irá extrair o nome do lugar e salvar em um documento no formato txt 
 ---
 background-image: url(https://raw.githubusercontent.com/Lyncoln/Mapa-Cultural/master/Artigo/EspacoCulturalRJ.png)
 background-position: 50% 50%
+background-size: contain
 class: center, bottom, inverse
 
 
@@ -82,9 +83,18 @@ Foram criadas colunas chamadas de "latitude" e "longitude" preenchidas todas com
 
 Foi criado um processo em que cada endereço foi padronizado para incluir a palavra "Rio de Janeiro" no final.
 
+<!--
 Foi necessário adquirir acesso a uma API do google que permitisse acessar aos dados do google map para obter dados de latitude e longitude.
 
 Geramos o Mapa da Cultura - MC.Para melhor visualização, criamos o mapa de marcadores de círculos e o mapa de calor. Há possibilidade de selecionar dois tipos diferentes de mapas, o Esri.WorldImagery ou o CartoDB.
+-->
+
+
+---
+background-image: url(https://raw.githubusercontent.com/Lyncoln/Mapa-Cultural/master/Apresentacao/API.png)
+background-position: 50% 50%
+background-size: contain
+class: center, bottom, inverse
 
 
 ---
