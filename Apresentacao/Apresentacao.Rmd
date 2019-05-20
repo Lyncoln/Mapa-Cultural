@@ -24,23 +24,15 @@ solarized_dark(
 )
 ```
 
-# Questões
-
-1. Existe uma assimetria na distribuição de equipamentos culturais no Estado do Rio de Janeiro?  
-2. No caso de existir, essa assimetria aponta uma desigualdade na distribuição dos equipamentos culturais do Estado?  
-3. Como deixar disponíveis as informações geolocalizadas contidas na secretaria Estado do Rio de Janeiro?
-
-
 ---
 
-
 # Ausência de Gestão Cultural
+
+O Brasil não tem um quadro de informações sobre a cultura disponível para o aceso de qualquer cidadão.  O que temos são tentativas de atender a demanda com informações a partir de informações pontuais.
 
 Barros & Ziviani (2009), a área da Cultura sofre com uma baixa institucionalização e despreparo dos órgãos gestores dos municípios quanto à importância das informações das políticas voltadas para o setor. 
 
 Dados sobre a Cultura são fundamentais para uma boa política cultural. 
-
-Em sua maioria, a gestão da cultura encontra-se acoplada a outro setor, como o turismo, a educação e até mesmo a saúde, como já ocorreu em tempos passados na instancia federal” (Barros & Ziviani, 2009).
 
 ---
 
